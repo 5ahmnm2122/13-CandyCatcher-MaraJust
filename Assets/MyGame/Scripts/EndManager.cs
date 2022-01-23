@@ -19,6 +19,7 @@ public class EndManager : MonoBehaviour
     {
         playerName.text = playerdata.playerName;
         playerscore.text = "Your Score: " + playerdata.playerScore.ToString();
+        // playerdata.currentHighscore = playerdata.playerScore;
 
         if (playerdata.playerLost)
         {
@@ -30,11 +31,25 @@ public class EndManager : MonoBehaviour
             lose.SetActive(false);
             win.SetActive(true);
         }
+
+        if (playerdata.playerScore > playerdata.currentHighscore)
+        {
+            playerdata.playerScore = playerdata.currentHighscore;
+            Debug.Log("New HighScore!");
+        } else
+        {
+            // no new Highscore
+        }
     }
 
     public void Restart ()
     {
         SceneManager.LoadScene("IntroScene");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
 }
