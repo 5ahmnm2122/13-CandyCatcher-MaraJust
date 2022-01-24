@@ -463,6 +463,7 @@ MonoBehaviour:
   playerdata: {fileID: 11400000, guid: 78bd22e92b944b6478dc55fff7566b38, type: 2}
   playerName: {fileID: 272504520}
   playerscore: {fileID: 1809990139}
+  playerHighscore: {fileID: 1887673430}
   win: {fileID: 1053825138}
   lose: {fileID: 1863612629}
 --- !u!1 &648219559
@@ -1179,8 +1180,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.3, y: -111}
-  m_SizeDelta: {x: 325.19, y: 50.76}
+  m_AnchoredPosition: {x: -60, y: -111}
+  m_SizeDelta: {x: 616.36, y: 50.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1887673430
 MonoBehaviour:

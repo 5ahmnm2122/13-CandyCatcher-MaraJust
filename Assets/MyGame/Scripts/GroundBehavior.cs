@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class GroundBehavior : MonoBehaviour
 {
-    public void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collided");
-        Destroy(collision.gameObject);
+        if (collision.gameObject.tag != "Player")
+        {
+            Debug.Log("With Ground Collided");
+            Destroy(collision.gameObject);
+        }
+        
     }
 }

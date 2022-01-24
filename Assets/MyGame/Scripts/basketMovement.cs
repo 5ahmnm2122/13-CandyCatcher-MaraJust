@@ -10,7 +10,7 @@ public class basketMovement: MonoBehaviour
     public float basketSpeed = 10f;
     //public Rigidbody2D basketRB;
 
-    public int score;
+   // public int score;
     public int lifes = 3;
 
     public GameObject ThreeLifesLeft;
@@ -35,14 +35,13 @@ public class basketMovement: MonoBehaviour
         // mousePosition.x = Camera.main.ScreenToWorldPoint(Input.mousePosition).x; 
         // mousePosition.y = transform.position.y;
         // transform.position = Vector3.MoveTowards(transform.position, mousePosition, basketSpeed * Time.deltaTime);
-
-  
     }
 
     // count score
-    public void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collided");
+        Debug.Log(collision.gameObject.name.ToString() + "With Basket Collided");
+
         if (collision.gameObject.tag == "GoodCandy")
         {
             playerdata.playerScore += 1;
@@ -52,7 +51,6 @@ public class basketMovement: MonoBehaviour
 
         } else if (collision.gameObject.tag == "BadCandy")
         {
-
             if (lifes > 0)
             {
                 lifes -= 1;
@@ -64,21 +62,18 @@ public class basketMovement: MonoBehaviour
                 {
                     ThreeLifesLeft.SetActive(false);
                     TwoLifesLeft.SetActive(false);
+                } else
+                {
+                    ThreeLifesLeft.SetActive(false);
+                    TwoLifesLeft.SetActive(false);
+                    OneLifesLeft.SetActive(false);
+
+                    Debug.Log("Lost");
+                    playerdata.playerLost = true;
+
+                    SceneManager.LoadScene("EndScene");
                 }
-
             }
-            else
-            {
-                ThreeLifesLeft.SetActive(false);
-                TwoLifesLeft.SetActive(false);
-                OneLifesLeft.SetActive(false);
-
-                Debug.Log("Lost");
-                playerdata.playerLost = true;
-
-                SceneManager.LoadScene("EndScene");
-            }
-
             Destroy(collision.gameObject);
         }
     }

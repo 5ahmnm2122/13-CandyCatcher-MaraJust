@@ -10,6 +10,7 @@ public class EndManager : MonoBehaviour
 
     public Text playerName;
     public Text playerscore;
+    public Text playerHighscore;
 
     public GameObject win;
     public GameObject lose;
@@ -19,14 +20,15 @@ public class EndManager : MonoBehaviour
     {
         playerName.text = playerdata.playerName;
         playerscore.text = "Your Score: " + playerdata.playerScore.ToString();
-        // playerdata.currentHighscore = playerdata.playerScore;
+        playerHighscore.text = "Current Highscore: " + playerdata.currentHighscore.ToString();
 
         if (playerdata.playerLost)
         {
             lose.SetActive(true);
             win.SetActive(false);
 
-        } else
+        }
+        else
         {
             lose.SetActive(false);
             win.SetActive(true);
@@ -36,9 +38,10 @@ public class EndManager : MonoBehaviour
         {
             playerdata.playerScore = playerdata.currentHighscore;
             Debug.Log("New HighScore!");
-        } else
+        }
+        else
         {
-            // no new Highscore
+            playerdata.currentHighscore = playerdata.playerScore;
         }
     }
 

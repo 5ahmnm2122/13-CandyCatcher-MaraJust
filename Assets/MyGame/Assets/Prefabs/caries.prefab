@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3633272489773286550}
   - component: {fileID: 5481576184772621597}
   - component: {fileID: 2533369308435204190}
-  - component: {fileID: 1032137352186827607}
+  - component: {fileID: 402167029089770021}
   m_Layer: 0
   m_Name: caries
   m_TagString: BadCandy
@@ -97,16 +97,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   candySpeed: 4
---- !u!65 &1032137352186827607
-BoxCollider:
+--- !u!61 &402167029089770021
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3123051571358961904}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10, y: 4.76}
+    newSize: {x: 10, y: 4.76}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.316866, y: 3.0316865, z: 0.19999999}
-  m_Center: {x: -0.03927473, y: -0.06284706, z: 0}
+  m_Size: {x: 10, y: 4.76}
+  m_EdgeRadius: 0
