@@ -19,12 +19,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         nameText.text = playerData.playerName;
-        scoreText.text = "Score: " + bm.score.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        scoreText.text = "Score: " + bm.score.ToString();
     }
 }

@@ -42,13 +42,17 @@ public class basketMovement: MonoBehaviour
     // count score
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("goodCandy"))
+        Debug.Log("Collided");
+        if (collision.gameObject.tag == "GoodCandy")
         {
-            score += 1;
-            Debug.Log(score);
+            playerdata.playerScore += 1;
+            Debug.Log(playerdata.playerScore);
 
-        } else if (collision.gameObject.CompareTag("badCandy"))
+            Destroy(collision.gameObject);
+
+        } else if (collision.gameObject.tag == "BadCandy")
         {
+
             if (lifes > 0)
             {
                 lifes -= 1;
@@ -74,6 +78,8 @@ public class basketMovement: MonoBehaviour
 
                 SceneManager.LoadScene("EndScene");
             }
+
+            Destroy(collision.gameObject);
         }
     }
 }
