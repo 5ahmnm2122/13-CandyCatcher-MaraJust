@@ -1,27 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class basketMovement: MonoBehaviour
+public class BasketMovement: MonoBehaviour
 {
+    [Header("Scripts")]
+    [Space(7)]
     public PlayerData playerdata;
 
+    [Header("Stats")]
+    [Space(7)]
     public float basketSpeed = 10f;
-    //public Rigidbody2D basketRB;
-
-   // public int score;
     public int lifes = 3;
 
+    [Header("Lifes")]
+    [Space(7)]
     public GameObject ThreeLifesLeft;
     public GameObject TwoLifesLeft;
     public GameObject OneLifesLeft;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //basketRB = GetComponent<Rigidbody2D>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -47,10 +43,13 @@ public class basketMovement: MonoBehaviour
             playerdata.playerScore += 1;
             Debug.Log(playerdata.playerScore);
 
+
+
             Destroy(collision.gameObject);
 
         } else if (collision.gameObject.tag == "BadCandy")
         {
+            // manage lifes
             if (lifes > 0)
             {
                 lifes -= 1;
@@ -60,7 +59,6 @@ public class basketMovement: MonoBehaviour
                 }
                 else if (lifes == 1)
                 {
-                    ThreeLifesLeft.SetActive(false);
                     TwoLifesLeft.SetActive(false);
                 } else
                 {

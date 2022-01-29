@@ -1,12 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CandySpawner : MonoBehaviour
 {
+    [Header("Candy")]
+    [Space(7)]
     [SerializeField]
     private GameObject[] candy;
 
+    [Header("Stats")]
+    [Space(7)]
     public float xMin = -7.48f;
     public float xMax = 7.5f;
 

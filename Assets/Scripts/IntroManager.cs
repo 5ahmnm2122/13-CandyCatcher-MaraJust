@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -7,9 +5,13 @@ using UnityEngine.SceneManagement;
 public class IntroManager : MonoBehaviour
 {
     // needed scripts
+    [Header("Scripts")]
+    [Space(7)]
     public PlayerData playerdata;
 
     // needed UI objects
+    [Header("UI Objects")]
+    [Space(7)]
     public Button playButton;
     public InputField nameSpace;
     public string input;
@@ -18,7 +20,7 @@ public class IntroManager : MonoBehaviour
     public void GetNameData ()
     {
         input = nameSpace.text;
-        if (input != null)
+        if (input != "")
         {
             playButton.interactable = true;
         }
@@ -28,6 +30,7 @@ public class IntroManager : MonoBehaviour
     void Start()
     {
         playButton.interactable = false;
+        playerdata.playerLost = false;
     }
 
     public void SaveData ()

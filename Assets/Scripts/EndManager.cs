@@ -1,17 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class EndManager : MonoBehaviour
 {
+    [Header("Scripts")]
+    [Space(7)]
     public PlayerData playerdata;
 
+    [Header("UI Objects")]
+    [Space(7)]
     public Text playerName;
     public Text playerscore;
     public Text playerHighscore;
 
+    [Header("Win or Lose")]
+    [Space(7)]
     public GameObject win;
     public GameObject lose;
 
@@ -20,7 +24,7 @@ public class EndManager : MonoBehaviour
     {
         playerName.text = playerdata.playerName;
         playerscore.text = "Your Score: " + playerdata.playerScore.ToString();
-        playerHighscore.text = "Current Highscore: " + playerdata.currentHighscore.ToString();
+        playerHighscore.text = "Current Highscore: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
 
         if (playerdata.playerLost)
         {
@@ -34,15 +38,17 @@ public class EndManager : MonoBehaviour
             win.SetActive(true);
         }
 
-        if (playerdata.playerScore > playerdata.currentHighscore)
+
+        if (playerdata.playerScore > PlayerPrefs.GetInt("HighScore", 0))
         {
-            playerdata.playerScore = playerdata.currentHighscore;
-            Debug.Log("New HighScore!");
+            PlayerPrefs.SetInt("HighScore", playerdata.playerScore);
+            playerHighscore.text = "Current Highscore: " + playerdata.playerScore.ToString();
         }
-        else
-        {
-            playerdata.currentHighscore = playerdata.playerScore;
-        }
+    }
+
+    private void Update()
+    {
+        playerHighscore.text = "Current Highscore: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 
     public void Restart ()
@@ -55,4 +61,8 @@ public class EndManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void Reset ()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }

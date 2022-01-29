@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GroundBehavior : MonoBehaviour
@@ -10,7 +8,6 @@ public class GroundBehavior : MonoBehaviour
         {
             Debug.Log("With Ground Collided");
             Destroy(collision.gameObject);
-        }
-        
+        } 
     }
 }
