@@ -15,7 +15,7 @@ OS: Windows 10, Unity 2020.3.18f1, Microsoft Visual Studio
 WebGL
 
 ### Visuals: 
-<img width="1469" alt="Screenshot from Candy Game" src="/Assets/Pics/Screenshot_CandyGame">
+<img width="1469" alt="Screenshot from Candy Game" src="/Assets/Pics/Screenshot_CandyGame.png">
 
 ### Necessary setup/execution steps: 
 Unity 2020.3.18f1 Installation
