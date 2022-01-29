@@ -4,7 +4,9 @@
 https://github.com/5ahmnm2122/13-CandyCatcher-MaraJust
 
 ### Project description: 
-3 Scene Game. You have to catch good candy in a basket while a timer is running.
+3 Scene Game: An Intro Scene to put your name in, a Main Scene to play and an End Scene with Score
+
+Game: You have to catch good candy in a basket while a timer is running. If the timer runs up without a "bad candy", you win, if you caught the caries teeth three times, you loose.
 
 ### Development platform: 
 OS: Windows 10, Unity 2020.3.18f1, Microsoft Visual Studio
@@ -13,7 +15,7 @@ OS: Windows 10, Unity 2020.3.18f1, Microsoft Visual Studio
 WebGL
 
 ### Visuals: 
-none
+<img width="1469" alt="Screenshot from Candy Game" src="/Assets/Pics/Screenshot_CandyGame">
 
 ### Necessary setup/execution steps: 
 Unity 2020.3.18f1 Installation
