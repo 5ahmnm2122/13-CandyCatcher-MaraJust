@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
             if (timerTime > 0)
             {
                 timerTime -= Time.deltaTime;
-                // Debug.Log(timerTime.ToString());
                 ShowTimeRight(timerTime);
             }
             else
